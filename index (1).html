@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0d0e">
+<title>FØRA — Servicios Técnicos Premium</title>
+<meta name="description" content="Concepto premium para empresas de servicios técnicos, mantenimiento, reformas e instalaciones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0d0e;--paper:#f3f0ea;--paper2:#e8e2da;--white:#fff;--muted:#77736e;
+  --line:rgba(11,13,14,.12);--accent:#e16f3b;--accentSoft:#f0d1c2;--max:1240px;
+  --shadow:0 28px 90px rgba(8,10,11,.14);--r:30px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+button,input,select,textarea{font:inherit}.wrap{max-width:var(--max);margin:auto;padding:0 26px}
+.serif{font-family:"DM Serif Display",serif;font-weight:400;letter-spacing:-.045em;line-height:.94}
+.kicker{font-size:.64rem;font-weight:800;letter-spacing:.19em;text-transform:uppercase;color:var(--accent)}
+.section{padding:116px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;border:1px solid var(--ink);padding:14px 20px;font-size:.8rem;font-weight:800;background:transparent;transition:.25s}
+.btn:hover{transform:translateY(-2px)}.btn.dark{background:var(--ink);color:#fff}.btn.orange{background:var(--accent);border-color:var(--accent);color:#fff}.btn.light{background:#fff;border-color:#fff}
+.reveal{opacity:0;transform:translateY(22px);transition:.75s ease}.reveal.on{opacity:1;transform:none}
+.sectionHead{display:grid;grid-template-columns:1.13fr .87fr;gap:84px;align-items:end;margin-bottom:56px}.sectionHead h2{font-size:clamp(3.5rem,6.8vw,6.5rem);margin:9px 0 0}.sectionHead p{margin:0;color:var(--muted);max-width:540px}
+
+/* NAV */
+.headWrap{position:fixed;top:12px;left:0;right:0;z-index:200}
+header{max-width:var(--max);margin:auto;padding:10px 12px 10px 20px;border-radius:999px;background:rgba(243,240,234,.9);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.7);box-shadow:0 12px 44px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:1.15rem;letter-spacing:.08em}.logo span{color:var(--accent)}.logo small{font-size:.55rem;letter-spacing:.16em;color:var(--muted);margin-left:8px}
+nav{display:flex;align-items:center;gap:24px;font-size:.77rem;font-weight:700}.menuBtn{display:none;border:0;background:none;font-size:1.35rem}
+
+/* HERO */
+.hero{min-height:100svh;padding:106px 0 34px;display:flex;align-items:center;position:relative}
+.hero:before{content:"";position:absolute;right:-10%;top:15%;width:42vw;height:42vw;border-radius:50%;background:radial-gradient(circle,rgba(225,111,59,.08),transparent 68%);pointer-events:none}
+.heroGrid{display:grid;grid-template-columns:.86fr 1.14fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(4.6rem,9vw,8.9rem);margin:14px 0 26px;max-width:720px}.hero h1 em{font-weight:400;color:var(--accent)}
+.heroCopy>p{color:var(--muted);font-size:1.04rem;max-width:560px}
+.heroActions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}
+.heroProof{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:42px;max-width:570px}.heroProof div{padding-top:14px;border-top:1px solid var(--line)}.heroProof b{display:block}.heroProof span{font-size:.69rem;color:var(--muted)}
+.heroVisual{position:relative;height:min(76vh,800px);min-height:610px}
+.visualMain{position:absolute;inset:0 0 0 8%;border-radius:38px;overflow:hidden;box-shadow:var(--shadow)}
+.visualMain:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(0,0,0,.68))}
+.visualFloat{position:absolute;z-index:4;left:0;top:11%;width:185px;height:250px;border-radius:24px;overflow:hidden;border:7px solid var(--paper);box-shadow:0 18px 55px rgba(0,0,0,.13)}
+.heroChip{position:absolute;z-index:5;right:18px;top:18px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);padding:9px 12px;border-radius:999px;font-size:.67rem;font-weight:800}
+.heroCard{position:absolute;z-index:5;left:28px;bottom:25px;background:#fff;border-radius:19px;padding:18px 19px;min-width:245px;box-shadow:0 18px 60px rgba(0,0,0,.14)}
+.heroCard b{display:block}.heroCard small{color:var(--muted)}
+.heroCard .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:8px}
+
+/* TRUST STRIP */
+.trust{padding:10px 0 46px}.trustGrid{display:grid;grid-template-columns:1.35fr repeat(4,1fr);gap:18px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0}
+.trustGrid span{font-size:.71rem;color:var(--muted)}.trustGrid b{text-align:center;font-size:.71rem;letter-spacing:.05em}
+
+/* SERVICES */
+.services{background:var(--ink);color:#fff}.services .sectionHead p{color:#b9b7b3}.services .kicker{color:#f0a17d}
+.serviceGrid{display:grid;grid-template-columns:1.22fr .89fr .89fr;gap:15px}
+.service{position:relative;height:550px;border-radius:30px;overflow:hidden;background:#242728}.service img{transition:.65s}.service:hover img{transform:scale(1.045)}
+.service:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 28%,rgba(0,0,0,.84))}
+.serviceCopy{position:absolute;z-index:2;left:23px;right:23px;bottom:23px}.serviceCopy .num{font-size:.62rem;letter-spacing:.15em;color:#efb293}.serviceCopy h3{font:400 2.25rem "DM Serif Display";margin:7px 0 8px}.serviceCopy p{font-size:.77rem;color:#d1ceca;max-width:300px;margin:0}
+.serviceBadge{position:absolute;z-index:3;top:18px;right:18px;background:rgba(255,255,255,.94);color:var(--ink);padding:8px 11px;border-radius:999px;font-size:.66rem;font-weight:800}
+
+/* SECTOR CARDS */
+.sectors{padding:40px 0 100px;background:var(--ink);color:#fff}
+.sectorGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.sector{border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:18px;min-height:130px;display:flex;flex-direction:column;justify-content:space-between}.sector small{color:#999}.sector b{font-size:.9rem}
+
+/* CASE STUDIES */
+.caseSec{background:var(--paper2)}
+.caseGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.caseMain,.caseSide{border-radius:30px;overflow:hidden;position:relative}.caseMain{min-height:680px}.caseSide{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+.caseCard{position:relative;overflow:hidden;border-radius:30px;min-height:330px}.caseCard:after,.caseMain:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.78))}
+.caseInfo{position:absolute;z-index:3;left:24px;right:24px;bottom:22px;color:#fff}.caseInfo span{font-size:.65rem;color:#d9d5cf}.caseInfo h3{font:400 2rem "DM Serif Display";margin:5px 0 8px}
+.caseStats{display:flex;gap:18px;flex-wrap:wrap}.caseStats b{font-size:.72rem}.caseStats small{color:#d8d4cf}
+
+/* PROCESS */
+.processGrid{display:grid;grid-template-columns:.75fr 1.25fr;gap:72px}.processIntro{position:sticky;top:110px;align-self:start}.processIntro h2{font-size:clamp(3.2rem,5.7vw,5.6rem);margin:10px 0 22px}.processIntro p{color:var(--muted)}
+.step{display:grid;grid-template-columns:55px 1fr auto;gap:20px;align-items:start;padding:24px 0;border-top:1px solid var(--line)}.step .n{font-size:.64rem;font-weight:800;color:var(--accent)}.step h3{margin:0 0 7px;font-size:1rem}.step p{margin:0;color:var(--muted);font-size:.84rem}.step .tag{font-size:.65rem;border:1px solid var(--line);border-radius:999px;padding:7px 9px;font-weight:800}
+
+/* STATEMENT */
+.statement{background:var(--accent);color:#fff;padding:74px 0}.statementGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}.statement h2{font-size:clamp(3.1rem,6vw,5.8rem);margin:0}.statement p{color:#fde9de;max-width:500px}.statGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.stat b{font:400 3rem "DM Serif Display";display:block}.stat span{font-size:.67rem;color:#fde9de}
+
+/* REVIEWS */
+.reviewGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}.reviewMain{background:var(--ink);color:#fff;border-radius:30px;padding:56px}.stars{color:#efa17d;letter-spacing:.12em}
+.reviewMain blockquote{font:400 clamp(2.3rem,4.5vw,4rem)/1.06 "DM Serif Display";margin:30px 0 48px}.reviewFoot{display:flex;justify-content:space-between;color:#c7c3bd;font-size:.74rem}
+.reviewSide{display:grid;gap:18px}.reviewCard{background:#fff;border-radius:26px;padding:29px}.reviewCard p{font:400 1.48rem/1.2 "DM Serif Display";margin:16px 0 28px}.reviewCard small{color:var(--muted)}
+
+/* AREA */
+.area{background:#dbd5cd}.areaGrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
+.areaVisual{min-height:560px;border-radius:30px;overflow:hidden;position:relative;background:
+linear-gradient(20deg,transparent 47%,rgba(255,255,255,.7) 48%,rgba(255,255,255,.7) 51%,transparent 52%),
+linear-gradient(105deg,transparent 48%,rgba(255,255,255,.64) 49%,rgba(255,255,255,.64) 51%,transparent 52%),
+radial-gradient(circle at 31% 40%,rgba(225,111,59,.62) 0 4%,transparent 4.4%),
+radial-gradient(circle at 58% 51%,rgba(225,111,59,.62) 0 4%,transparent 4.4%),
+radial-gradient(circle at 74% 31%,rgba(225,111,59,.62) 0 3.6%,transparent 4%),
+#c7c0b7}
+.areaCard{background:#fff;border-radius:30px;padding:54px}.areaCard h2{font-size:clamp(3.2rem,5.8vw,5.4rem);margin:10px 0 24px}.areaCard p{color:var(--muted)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}.tags span{border:1px solid var(--line);border-radius:999px;padding:9px 11px;font-size:.69rem;font-weight:700}
+
+/* QUOTE CTA */
+.quoteSec{background:var(--ink);color:#fff}.quoteGrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.quoteSec h2{font-size:clamp(3.8rem,6.8vw,6.3rem);margin:10px 0 25px}.quoteSec p{color:#bbb8b4;max-width:490px}
+.formBox{background:#fff;color:var(--ink);border-radius:30px;padding:32px}.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+label{font-size:.69rem;font-weight:800;color:var(--muted);display:block;margin-bottom:6px}input,select,textarea{width:100%;border:1px solid var(--line);background:#faf8f4;border-radius:12px;padding:13px;outline:none}.full{grid-column:1/-1}textarea{min-height:110px;resize:vertical}
+.success{display:none;margin-top:12px;padding:13px;background:#e8f1e7;color:#315536;border-radius:11px;font-size:.79rem}
+
+/* FAQ FOOTER */
+.faqGrid{display:grid;grid-template-columns:.68fr 1.32fr;gap:70px}.faqGrid h2{font-size:clamp(3.1rem,5.6vw,5.2rem);margin:10px 0}
+details{border-top:1px solid var(--line);padding:20px 0}summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:20px}summary:after{content:"+";color:var(--accent);font-size:1.2rem}details[open] summary:after{content:"—"}details p{color:var(--muted);font-size:.85rem}
+footer{background:#090b0c;color:#fff;padding:64px 0 28px}.footGrid{display:grid;grid-template-columns:1.4fr .7fr .7fr;gap:60px}.footGrid p,.footGrid a{color:#aaa}.footLinks{display:grid;gap:9px;font-size:.79rem}.demo{display:inline-block;margin-top:16px;border:1px solid rgba(255,255,255,.18);padding:7px 10px;border-radius:999px;font-size:.6rem;letter-spacing:.1em;color:#bbb;text-transform:uppercase}.footBottom{margin-top:48px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;color:#777;font-size:.65rem}
+.mobileBar{display:none;position:fixed;z-index:190;bottom:10px;left:10px;right:10px;background:var(--ink);padding:9px;border-radius:15px;grid-template-columns:1fr 1fr;box-shadow:0 15px 50px rgba(0,0,0,.3)}.mobileBar a{text-align:center;color:#fff;padding:10px;font-size:.77rem;font-weight:800}.mobileBar a:last-child{background:var(--accent);border-radius:10px}
+
+@media(max-width:950px){
+.section{padding:82px 0}.sectionHead,.heroGrid,.caseGrid,.processGrid,.statementGrid,.reviewGrid,.areaGrid,.quoteGrid,.faqGrid{grid-template-columns:1fr;gap:30px}
+nav{display:none;position:absolute;top:62px;left:14px;right:14px;background:var(--paper);padding:22px;border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.15);flex-direction:column;align-items:flex-start}nav.open{display:flex}.menuBtn{display:block}
+.hero{padding-top:92px}.heroVisual{height:64vh;min-height:540px}.serviceGrid{grid-template-columns:1fr}.service{height:465px}.sectorGrid{grid-template-columns:1fr 1fr}
+.caseMain{min-height:520px}.processIntro{position:static}.areaCard{padding:36px}.formBox{padding:24px}.footGrid{grid-template-columns:1fr 1fr}.footGrid>div:first-child{grid-column:1/-1}.mobileBar{display:grid}body{padding-bottom:74px}
+}
+@media(max-width:580px){
+.wrap{padding:0 16px}header{margin:0 8px}.hero h1{font-size:clamp(4.1rem,17.5vw,6.5rem)}.heroVisual{min-height:480px}.visualFloat{width:145px;height:190px}.heroCard{left:12px;right:12px;min-width:auto}.sectionHead h2{font-size:3.15rem}.trustGrid{grid-template-columns:1fr 1fr}.trustGrid span{grid-column:1/-1}.sectorGrid{grid-template-columns:1fr 1fr}.step{grid-template-columns:42px 1fr}.step .tag{display:none}.statGrid{grid-template-columns:1fr 1fr}.reviewMain{padding:30px}.areaCard{padding:28px}.formGrid{grid-template-columns:1fr}.full{grid-column:auto}.footGrid{grid-template-columns:1fr}.footGrid>div:first-child{grid-column:auto}.footBottom{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="headWrap">
+<header>
+<a class="logo" href="#inicio">FØRA<span>.</span><small>SERVICIOS</small></a>
+<nav id="nav">
+<a href="#servicios">Servicios</a>
+<a href="#casos">Casos</a>
+<a href="#metodo">Método</a>
+<a href="#opiniones">Opiniones</a>
+<a href="#zonas">Zonas</a>
+<a class="btn dark" href="#presupuesto">Presupuesto</a>
+</nav>
+<button class="menuBtn" id="menu" aria-label="Abrir menú">☰</button>
+</header>
+</div>
+
+<main>
+<section class="hero" id="inicio">
+<div class="wrap heroGrid">
+<div class="heroCopy reveal">
+<div class="kicker">Servicios técnicos · Madrid</div>
+<h1 class="serif">Trabajo serio. <em>Resultados visibles.</em></h1>
+<p>Instalación, mantenimiento y reparación para hogares y negocios. Atención rápida, presupuestos claros y un proceso profesional desde el primer contacto.</p>
+<div class="heroActions">
+<a class="btn orange" href="#presupuesto">Pedir presupuesto ↗</a>
+<a class="btn" href="#casos">Ver trabajos</a>
+</div>
+<div class="heroProof">
+<div><b>24–48 h</b><span>respuesta orientativa*</span></div>
+<div><b>+180</b><span>servicios demo*</span></div>
+<div><b>4,9 / 5</b><span>valoración demo*</span></div>
+</div>
+</div>
+
+<div class="heroVisual reveal">
+<div class="visualMain"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=88&w=1800" alt="Profesional realizando un trabajo técnico"></div>
+<div class="visualFloat"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=88&w=800" alt="Detalle de obra"></div>
+<div class="heroChip">Presupuesto claro · Seguimiento real</div>
+<div class="heroCard"><b><span class="dot"></span>Respuesta en horario laboral</b><small>WhatsApp · llamada · formulario</small></div>
+</div>
+</div>
+</section>
+
+<section class="trust">
+<div class="wrap trustGrid">
+<span>Diseñada para generar confianza antes del primer contacto</span>
+<b>TRABAJOS REALES</b><b>PRESUPUESTOS CLAROS</b><b>ZONAS DEFINIDAS</b><b>MÓVIL PRIMERO</b>
+</div>
+</section>
+
+<section class="section services" id="servicios">
+<div class="wrap">
+<div class="sectionHead reveal">
+<div><div class="kicker">Servicios</div><h2 class="serif">Lo que haces, presentado con autoridad.</h2></div>
+<p>La misma estructura se adapta a talleres, reformas, electricidad, fontanería, climatización, mantenimiento, limpieza, instaladores y servicios técnicos.</p>
+</div>
+<div class="serviceGrid">
+<article class="service reveal"><span class="serviceBadge">Más solicitado</span><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=86&w=1300"><div class="serviceCopy"><span class="num">01 · PROYECTOS</span><h3>Instalaciones & reformas</h3><p>Proyectos completos, mejoras, renovaciones y puesta a punto.</p></div></article>
+<article class="service reveal"><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=86&w=1000"><div class="serviceCopy"><span class="num">02 · MANTENIMIENTO</span><h3>Revisión & reparación</h3><p>Diagnóstico rápido y soluciones centradas en lo necesario.</p></div></article>
+<article class="service reveal"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=86&w=1000"><div class="serviceCopy"><span class="num">03 · EMPRESA</span><h3>Soporte profesional</h3><p>Mantenimiento recurrente para locales, oficinas y comunidades.</p></div></article>
+</div>
+</div>
+</section>
+
+<section class="sectors">
+<div class="wrap sectorGrid reveal">
+<div class="sector"><small>01</small><b>Talleres</b></div>
+<div class="sector"><small>02</small><b>Reformas</b></div>
+<div class="sector"><small>03</small><b>Instalaciones</b></div>
+<div class="sector"><small>04</small><b>Mantenimiento</b></div>
+</div>
+</section>
+
+<section class="section caseSec" id="casos">
+<div class="wrap">
+<div class="sectionHead reveal">
+<div><div class="kicker">Casos de trabajo</div><h2 class="serif">Que el trabajo hable antes que tú.</h2></div>
+<p>En producción estas piezas se sustituyen por proyectos reales del negocio, con fotos propias, alcance, ubicación y resultado.</p>
+</div>
+<div class="caseGrid">
+<article class="caseMain reveal">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=86&w=1400">
+<div class="caseInfo"><span>PROYECTO FICTICIO · MADRID NORTE</span><h3>Reforma integral de local</h3><div class="caseStats"><b>12 días*</b><small>ejecución demo</small><b>3 áreas*</b><small>intervenidas</small></div></div>
+</article>
+<div class="caseSide">
+<article class="caseCard reveal"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=86&w=1000"><div class="caseInfo"><span>ALCOBENDAS · DEMO</span><h3>Instalación técnica</h3><div class="caseStats"><b>48 h*</b><small>respuesta</small></div></div></article>
+<article class="caseCard reveal"><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=86&w=1000"><div class="caseInfo"><span>S.S. DE LOS REYES · DEMO</span><h3>Mantenimiento programado</h3><div class="caseStats"><b>24 h*</b><small>intervención</small></div></div></article>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="metodo">
+<div class="wrap processGrid">
+<aside class="processIntro reveal"><div class="kicker">Método</div><h2 class="serif">Que el cliente sepa qué pasa después.</h2><p>Un proceso claro elimina dudas y hace que una empresa pequeña parezca organizada, seria y fácil de contratar.</p></aside>
+<div class="reveal">
+<div class="step"><span class="n">01</span><div><h3>Contacto</h3><p>WhatsApp, llamada o formulario con fotos y datos esenciales.</p></div><span class="tag">2 min</span></div>
+<div class="step"><span class="n">02</span><div><h3>Valoración</h3><p>Alcance, urgencia, desplazamiento y materiales necesarios.</p></div><span class="tag">Claro</span></div>
+<div class="step"><span class="n">03</span><div><h3>Presupuesto</h3><p>Precio, qué incluye y siguiente paso explicado de forma directa.</p></div><span class="tag">PDF / WhatsApp</span></div>
+<div class="step"><span class="n">04</span><div><h3>Ejecución y cierre</h3><p>Trabajo, revisión final y recomendaciones cuando corresponda.</p></div><span class="tag">Final</span></div>
+</div>
+</div>
+</section>
+
+<section class="statement">
+<div class="wrap statementGrid reveal">
+<div><div class="kicker" style="color:#fff">Confianza</div><h2 class="serif">Menos promesas. Más pruebas.</h2></div>
+<div><p>Una buena web de servicios no necesita parecer enorme. Necesita demostrar que el negocio responde, trabaja bien y es fácil de contratar.</p>
+<div class="statGrid"><div class="stat"><b>180+</b><span>servicios demo*</span></div><div class="stat"><b>4,9</b><span>valoración demo*</span></div><div class="stat"><b>48 h</b><span>respuesta demo*</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="opiniones">
+<div class="wrap">
+<div class="sectionHead reveal">
+<div><div class="kicker">Opiniones</div><h2 class="serif">La reputación también vende.</h2></div>
+<p>En un cliente real solo mostramos reseñas auténticas y verificables.</p>
+</div>
+<div class="reviewGrid">
+<article class="reviewMain reveal"><div class="stars">★★★★★</div><blockquote>“Nos explicaron qué había que hacer, cuánto costaba y cuándo estaría terminado. Y cumplieron.”</blockquote><div class="reviewFoot"><span>Carlos M. · ficticio</span><span>Reforma local</span></div></article>
+<div class="reviewSide">
+<article class="reviewCard reveal"><div class="stars">★★★★★</div><p>“La comunicación fue rápida y el presupuesto muy claro.”</p><small>Lucía R. · testimonio ficticio</small></article>
+<article class="reviewCard reveal"><div class="stars">★★★★★</div><p>“Se nota cuando una empresa tiene el trabajo organizado.”</p><small>Javier P. · testimonio ficticio</small></article>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section area" id="zonas">
+<div class="wrap areaGrid">
+<div class="areaVisual reveal"></div>
+<div class="areaCard reveal"><div class="kicker">Zona de servicio</div><h2 class="serif">Dónde trabajamos, sin hacer perder tiempo.</h2><p>Indicamos las zonas reales para atraer contactos relevantes y evitar solicitudes que no se pueden atender.</p>
+<div class="tags"><span>San Sebastián de los Reyes</span><span>Alcobendas</span><span>Tres Cantos</span><span>Madrid Norte</span><span>Chamartín</span><span>Fuencarral</span></div>
+<p style="margin-top:24px;font-size:.71rem">* Datos y zonas mostrados como ejemplo de demostración.</p>
+</div>
+</div>
+</section>
+
+<section class="section quoteSec" id="presupuesto">
+<div class="wrap quoteGrid">
+<div class="reveal"><div class="kicker">Presupuesto</div><h2 class="serif">Cuéntanos qué hay que resolver.</h2><p>El formulario real puede conectarse a email, Odoo, CRM o WhatsApp. Pedimos solo lo necesario para responder rápido.</p><div class="heroActions"><a class="btn light" href="#contacto">Llamar ahora</a></div></div>
+<form class="formBox reveal" id="form">
+<div class="formGrid">
+<div><label>Nombre</label><input required placeholder="Tu nombre"></div>
+<div><label>Teléfono</label><input required placeholder="+34 600 000 000"></div>
+<div><label>Tipo de trabajo</label><select required><option value="">Selecciona</option><option>Instalación</option><option>Reparación</option><option>Mantenimiento</option><option>Reforma</option></select></div>
+<div><label>Zona</label><input placeholder="Localidad / CP"></div>
+<div class="full"><label>Cuéntanos brevemente</label><textarea placeholder="Qué necesitas, urgencia y cualquier detalle útil"></textarea></div>
+<div class="full"><button class="btn orange" style="width:100%">Solicitar valoración</button><div class="success" id="success">Demo: solicitud registrada visualmente. En producción se conectaría al canal real.</div></div>
+</div>
+</form>
+</div>
+</section>
+
+<section class="section" id="faq">
+<div class="wrap faqGrid">
+<div class="reveal"><div class="kicker">FAQ</div><h2 class="serif">Antes de contactar.</h2></div>
+<div class="reveal">
+<details><summary>¿Trabajáis con particulares y empresas?</summary><p>La web puede separar ambos tipos de cliente si el negocio trabaja con los dos.</p></details>
+<details><summary>¿Puedo mandar fotos por WhatsApp?</summary><p>Sí. En muchos oficios acelera mucho la valoración inicial.</p></details>
+<details><summary>¿Hay que mostrar precios?</summary><p>No. Podemos publicar tarifas, precios desde o únicamente solicitar presupuesto.</p></details>
+<details><summary>¿Se pueden enseñar trabajos reales?</summary><p>Sí. Es una de las herramientas comerciales más potentes para este tipo de negocio.</p></details>
+</div>
+</div>
+</section>
+</main>
+
+<footer id="contacto">
+<div class="wrap">
+<div class="footGrid">
+<div><a class="logo" href="#inicio">FØRA<span>.</span><small>SERVICIOS</small></a><p>Concepto premium para empresas de servicios locales.</p><span class="demo">Demo comercial · marca ficticia</span></div>
+<div><div class="kicker">Contacto</div><div class="footLinks" style="margin-top:14px"><a>+34 600 000 000</a><a>hola@fora.demo</a><a>Madrid · ubicación demo</a></div></div>
+<div><div class="kicker">Navegar</div><div class="footLinks" style="margin-top:14px"><a href="#servicios">Servicios</a><a href="#casos">Casos</a><a href="#zonas">Zonas</a><a href="#presupuesto">Presupuesto</a></div></div>
+</div>
+<div class="footBottom"><span>© 2026 FØRA Servicios · concepto demo</span><span>Privacidad · Cookies · Aviso legal</span></div>
+</div>
+</footer>
+
+<div class="mobileBar"><a href="#casos">Ver trabajos</a><a href="#presupuesto">Presupuesto</a></div>
+
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.onclick=()=>nav.classList.toggle('open');
+nav.querySelectorAll('a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('form').onsubmit=e=>{e.preventDefault();document.getElementById('success').style.display='block'}
+</script>
+</body>
+</html>
